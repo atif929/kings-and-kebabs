@@ -1,5 +1,0 @@
-User-agent: *
-Allow: /
-
-# TODO: update this to the real production domain once deployed
-Sitemap: https://www.kingskebabmexican.com.au/sitemap.xml
