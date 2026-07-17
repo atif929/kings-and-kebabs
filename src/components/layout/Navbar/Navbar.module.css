@@ -1,0 +1,202 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-navbar);
+  background-color: transparent;
+  border-bottom: 1px solid transparent;
+  transition: background-color var(--duration-base) var(--ease-premium),
+    border-color var(--duration-base) var(--ease-premium);
+}
+
+.navbar.scrolled {
+  background-color: rgba(10, 9, 8, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom-color: var(--color-border);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: var(--navbar-height);
+  padding-block: var(--space-2);
+}
+
+/* ===== Desktop nav (hidden below 1024px) ===== */
+.desktopNav {
+  display: none;
+}
+
+.navList {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+}
+
+.navLink {
+  position: relative;
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  padding-block: var(--space-2);
+  transition: color var(--duration-base) var(--ease-premium);
+}
+
+.navLink::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background-color: var(--color-accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--duration-base) var(--ease-premium);
+}
+
+.navLink:hover {
+  color: var(--color-text-primary);
+}
+
+.navLink.active {
+  color: var(--color-accent);
+}
+
+.navLink.active::after,
+.navLink:hover::after {
+  transform: scaleX(1);
+}
+
+.desktopActions {
+  display: none;
+  align-items: center;
+  gap: var(--space-5);
+}
+
+.phoneLink {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+  color: var(--color-text-primary);
+  transition: color var(--duration-base) var(--ease-premium);
+}
+
+.phoneLink:hover {
+  color: var(--color-accent);
+}
+
+/* ===== Cart button (shared: desktop actions + mobile actions) ===== */
+.cartBtn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  color: var(--color-text-primary);
+  padding: var(--space-2);
+  transition: color var(--duration-base) var(--ease-premium);
+}
+
+.cartBtn:hover {
+  color: var(--color-accent);
+}
+
+.cartBadge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 1.1rem;
+  height: 1.1rem;
+  padding-inline: 0.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.65rem;
+  font-weight: var(--fw-semibold);
+  color: var(--color-black-950);
+  background-color: var(--color-accent);
+  border-radius: 999px;
+  line-height: 1;
+}
+
+/* ===== Mobile toggle button ===== */
+.mobileActions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.menuToggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: var(--color-text-primary);
+  padding: var(--space-2);
+}
+
+/* ===== Mobile nav panel ===== */
+.mobileNav {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  max-height: 0;
+  overflow: hidden;
+  padding-inline: var(--container-padding-mobile);
+  background-color: var(--color-black-950);
+  border-top: 1px solid transparent;
+  transition: max-height var(--duration-slow) var(--ease-premium),
+    padding-block var(--duration-slow) var(--ease-premium);
+}
+
+.mobileNavOpen {
+  max-height: 32rem;
+  padding-block: var(--space-6);
+  border-top-color: var(--color-border);
+}
+
+.mobileNavList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.mobileNavLink {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  color: var(--color-text-primary);
+}
+
+.mobileNavLink.active {
+  color: var(--color-accent);
+}
+
+.mobilePhoneLink {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--color-text-muted);
+}
+
+.mobileCta {
+  width: 100%;
+}
+
+/* ===== Breakpoint: show desktop nav, hide mobile toggle ===== */
+@media (min-width: 1024px) {
+  .desktopNav,
+  .desktopActions {
+    display: flex;
+  }
+
+  .mobileActions,
+  .mobileNav {
+    display: none;
+  }
+}

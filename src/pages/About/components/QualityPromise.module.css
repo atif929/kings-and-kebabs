@@ -1,0 +1,6 @@
+.heading {
+  font-size: var(--fs-xl);
+  color: var(--color-text-primary);
+  margin-top: var(--space-3);
+  margin-bottom: var(--space-7);
+}

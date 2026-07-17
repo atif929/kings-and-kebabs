@@ -1,0 +1,36 @@
+.section {
+  padding-block: var(--space-9);
+}
+
+@media (min-width: 1024px) {
+  .section {
+    padding-block: var(--space-10);
+  }
+}
+
+.primary {
+  background-color: var(--color-bg-primary);
+}
+
+.elevated {
+  background-color: var(--color-bg-elevated);
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity var(--duration-slow) var(--ease-premium), transform var(--duration-slow) var(--ease-premium);
+}
+
+.revealVisible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

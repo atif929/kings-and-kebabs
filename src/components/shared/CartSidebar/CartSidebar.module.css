@@ -1,0 +1,118 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-modal);
+  background-color: rgba(10, 9, 8, 0.75);
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: calc(var(--z-modal) + 1);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-black-950);
+  border-left: 1px solid var(--color-border);
+  transform: translateX(100%);
+  transition: transform var(--duration-slow) var(--ease-premium);
+}
+
+.sidebar.open {
+  transform: translateX(0);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-5);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.title {
+  font-size: var(--fs-lg);
+  color: var(--color-text-primary);
+}
+
+.closeBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  font-size: 1.25rem;
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  transition: color var(--duration-base) var(--ease-premium), border-color var(--duration-base) var(--ease-premium);
+}
+
+.closeBtn:hover {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.empty {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  color: var(--color-text-muted);
+  padding: var(--space-6);
+  text-align: center;
+}
+
+.emptyIcon {
+  font-size: 2rem;
+  color: var(--color-black-700);
+}
+
+.list {
+  flex: 1;
+  overflow-y: auto;
+  padding-inline: var(--space-5);
+}
+
+.summary {
+  padding: var(--space-5);
+  border-top: 1px solid var(--color-border);
+}
+
+.summaryRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--fs-sm);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-2);
+}
+
+.totalRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--fs-md);
+  font-weight: var(--fw-semibold);
+  color: var(--color-text-primary);
+  padding-top: var(--space-3);
+  margin-top: var(--space-2);
+  margin-bottom: var(--space-4);
+  border-top: 1px solid var(--color-border);
+}
+
+.totalRow span:last-child {
+  color: var(--color-accent);
+}
+
+.checkoutBtn {
+  width: 100%;
+}
+
+@media (min-width: 480px) {
+  .sidebar {
+    width: 420px;
+  }
+}

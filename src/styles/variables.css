@@ -1,0 +1,119 @@
+/*
+  KINGS KEBAB & MEXICAN — DESIGN SYSTEM
+  Theme: Black / Gold luxury restaurant
+  All values are consumed via CSS variables — never hardcode colors/spacing in components.
+*/
+
+:root {
+  /* ===== COLOR PALETTE ===== */
+
+  /* Black scale — primary background surfaces */
+  --color-black-950: #0a0908;   /* deepest bg, hero overlays */
+  --color-black-900: #121110;   /* page background */
+  --color-black-800: #1a1815;   /* elevated surfaces, cards */
+  --color-black-700: #24211d;   /* borders, dividers on dark */
+  --color-black-600: #322e28;   /* hover states on dark surfaces */
+
+  /* Gold scale — primary accent, luxury signal */
+  --color-gold-300: #e8d29a;    /* light gold, hover text */
+  --color-gold-400: #d9b968;    /* secondary gold accents */
+  --color-gold-500: #c9a24b;    /* PRIMARY gold — CTAs, highlights, active states */
+  --color-gold-600: #a8843a;    /* pressed/active gold */
+  --color-gold-700: #86682d;    /* deep gold, subtle borders */
+
+  /* Neutral / text */
+  --color-cream: #f5f1e8;       /* primary body text on dark bg */
+  --color-cream-dim: #c9c3b4;   /* secondary/muted text on dark bg */
+  --color-white: #ffffff;
+  --color-black: #000000;
+
+  /* Feedback (used sparingly — forms, validation only) */
+  --color-error: #c0503e;
+  --color-success: #5a8a5f;
+
+  /* Semantic aliases — components should reference these, not raw scale values */
+  --color-bg-primary: var(--color-black-900);
+  --color-bg-elevated: var(--color-black-800);
+  --color-bg-overlay: rgba(10, 9, 8, 0.75);
+  --color-border: var(--color-black-700);
+  --color-text-primary: var(--color-cream);
+  --color-text-muted: var(--color-cream-dim);
+  --color-accent: var(--color-gold-500);
+  --color-accent-hover: var(--color-gold-400);
+  --color-accent-pressed: var(--color-gold-600);
+
+  /* ===== TYPOGRAPHY ===== */
+
+  /* Display/heading font — warm, characterful soft-serif for a food-forward
+     luxury feel. Also powers the logo (see Logo.module.css for its distinct
+     italic treatment, keeping the wordmark visually separate from headings
+     while staying in the same type family for coherence). */
+  --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
+  /* Body font — modern, highly legible sans, warmer than the more common Inter/Manrope pairing. */
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  --fs-xs: 0.75rem;    /* 12px — tags, fine print */
+  --fs-sm: 0.875rem;   /* 14px — captions, labels */
+  --fs-base: 1rem;     /* 16px — body text */
+  --fs-md: 1.125rem;   /* 18px — lead paragraphs */
+  --fs-lg: 1.5rem;     /* 24px — card titles */
+  --fs-xl: 2rem;       /* 32px — section headings */
+  --fs-2xl: 2.75rem;   /* 44px — page headings */
+  --fs-3xl: 3.75rem;   /* 60px — hero headline (desktop) */
+  --fs-4xl: 4.75rem;   /* 76px — hero headline (large desktop) */
+
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+
+  --lh-tight: 1.15;
+  --lh-snug: 1.35;
+  --lh-normal: 1.6;
+
+  --ls-tight: -0.01em;
+  --ls-wide: 0.06em;   /* used on gold uppercase labels/eyebrows */
+
+  /* ===== SPACING SCALE (4px base) ===== */
+  --space-1: 0.25rem;  /* 4px */
+  --space-2: 0.5rem;   /* 8px */
+  --space-3: 0.75rem;  /* 12px */
+  --space-4: 1rem;     /* 16px */
+  --space-5: 1.5rem;   /* 24px */
+  --space-6: 2rem;     /* 32px */
+  --space-7: 3rem;     /* 48px */
+  --space-8: 4rem;     /* 64px */
+  --space-9: 6rem;     /* 96px */
+  --space-10: 8rem;    /* 128px */
+
+  /* ===== LAYOUT ===== */
+  --container-max: 1280px;
+  --container-padding-mobile: 1.25rem;
+  --container-padding-desktop: 2.5rem;
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 8px;
+  --navbar-height: 4.5rem;       /* 72px — used by CategoryNav sticky offset + section scroll-margin */
+  --category-nav-height: 3.5rem; /* 56px */
+
+  /* ===== MOTION ===== */
+  --ease-premium: cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-fast: 150ms;
+  --duration-base: 300ms;
+  --duration-slow: 500ms;
+
+  /* ===== Z-INDEX SCALE ===== */
+  --z-navbar: 100;
+  --z-mobile-menu: 200;
+  --z-modal: 300;
+  --z-toast: 400;
+}
+
+/* ===== BREAKPOINTS (reference only — use in media queries directly, CSS vars can't be used in @media) ===== */
+/*
+  mobile:  0 – 479px   (default, mobile-first base styles)
+  sm:      480px  → @media (min-width: 480px)
+  tablet:  768px  → @media (min-width: 768px)
+  desktop: 1024px → @media (min-width: 1024px)
+  wide:    1280px → @media (min-width: 1280px)
+*/

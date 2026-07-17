@@ -1,0 +1,55 @@
+.layout {
+  max-width: 32rem;
+  margin-inline: auto;
+}
+
+.actionBtn {
+  width: 100%;
+  margin-top: var(--space-6);
+}
+
+.paymentActions {
+  display: flex;
+  gap: var(--space-3);
+  margin-top: var(--space-6);
+}
+
+.paymentActions > * {
+  flex: 1;
+}
+
+.empty {
+  text-align: center;
+  padding-block: var(--space-8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+  color: var(--color-text-muted);
+}
+
+.success {
+  text-align: center;
+  padding-block: var(--space-8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+  max-width: 28rem;
+  margin-inline: auto;
+}
+
+.successIcon {
+  font-size: 3rem;
+  color: var(--color-accent);
+}
+
+.successHeading {
+  font-size: var(--fs-xl);
+  color: var(--color-text-primary);
+}
+
+.successText {
+  font-size: var(--fs-sm);
+  color: var(--color-text-muted);
+}
